@@ -3,9 +3,10 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 80;
 
 app.get('/', (req, res) => res.sendFile(__dirname+'/website/index.html'));
+app.use('/commands', express.static('./website/commands'));
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
@@ -39,4 +40,4 @@ global.logFile = logFile
 // Initializing the project
 require("./handler")(client);
 
-client.login(process.env.TOKEN);
+// client.login(process.env.TOKEN);
