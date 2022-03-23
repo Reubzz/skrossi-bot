@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reubz Bot Commands</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />  
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/tabs.css">
+    
+</head>
+<body>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a href="/home.html" class="navbar-item">
+                <img src="/Assets/imgs/Logo2.png" alt="Reubz Bot Logo" style="max-height: 3 5px;">
+            </a>
+
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="/home.html" class="navbar-item bd-navbar-item">
+                    Home
+                </a>
+                <a href="/commands.html" class="navbar-item bd-navbar-item">
+                    Commands
+                </a>
+                <a href="/leaderboard.html" class="navbar-item bd-navbar-item">
+                    Leaderbaords
+                </a>
+            </div>
+
+            <div class="navbar-end is-dark">
+                <a href="https://discord.gg/nmKqbgtEWb" class="navbar-item bd-navbar-item" target="_blank">
+                    <img src="/Assets/imgs/discord-final.png" alt="Reubz Discord Server">
+                </a>
+                <a href="https://twitter.com/Official_Reubz" class="navbar-item is-hoverable bd-navbar-item" target="_blank">
+                    <img src="/Assets/imgs/twitter-final.png" alt="Reubz Twitter">
+                </a>
+                <a href="https://instagram.com/_.reubz._" class="navbar-item is-hoverable bd-navbar-item" target="_blank">
+                    <img src="/Assets/imgs/insta-final.png" alt="Reubz Instagram">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <div class="box">
+                    <h1 class="has-text-white title">Important</h1>
+                    <p class="has-text-grey-light">All Commands are marked with Tags to show if any Special Permissions is required for the user to exectute the command.</p>
+                    <p class="has-text-grey-light">Eg.</p>
+                    <p class="has-text-grey-light"><span class="tag is-danger is-light">Administrator</span></p>
+                    <p class="has-text-grey-light"><span class="tag is-danger is-light">Manage Messages</span></p>
+                    <br>
+                    <p class="has-text-grey-light">In Few Commands you can set Required Roles they are marked with the <span class="tag is-info is-light">Required Roles</span> tag </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="columns">
+                <!-- Side Menu -->
+                <div class="column is-one-fifth">
+                    <h1 class="title is-size-5 has-text-centered">Menu</h1>
+                    <aside class="menu">
+                        <ul class="menu-list">
+                            <li>
+                                <a href="javascript:showhide('chat-commands-options')" class="is-active has-text-white" id="chat-commands-toggle">
+                                    Chat Commands
+                                </a>
+                                <div class="chat-command-options">
+                                    <ul class="is-hidden" id="chat-commands-options">
+                                        <li>
+                                            <a href="javascript:commandsContent('chat-level-system-content')" class="has-text-white on-hover-color" id="chat-com-level-system">Levels System</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:commandsContent('chat-games-content')" class="has-text-white on-hover-color" id="chat-com-games">Games</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:commandsContent('chat-discord-together-content')" class="has-text-white on-hover-color" id="chat-com-discord-together">Discord Together</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:commandsContent('chat-miscellaneous-content')" class="has-text-white on-hover-color" id="chat-com-miscellaneous">Miscellaneous</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:commandsContent('chat-moderation-content')" class="has-text-white on-hover-color" id="chat-com-moderation">Moderation</a>
+                                        </li>  
+                                    </ul>
+                                </div>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="javascript:showhide('slash-commands-options')" class="is-active has-text-white">Slash Commands</a>
+
+                                <ul class="is-hidden commands-main-menu" id="slash-commands-options">
+                                    
+                                    <li>
+                                        <a href="" class="has-text-white on-hover-color" id="slash-com-level-system">Levels System</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="has-text-white on-hover-color" id="slash-com-discord-activites">Discord Activites</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="has-text-white on-hover-color" id="slash-com-miscellaneous">Miscellaneous</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="has-text-white on-hover-color" id="slash-com-mod">Moderation</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="has-text-white on-hover-color" id="slash-com-admin">Admin</a>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <a href="" class="has-text-white on-hover-color" id="slash-com-music">Music [Beta]</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+
+                <!-- Commands Box -->
+                <div class="column is-four-fifths">
+                    <h1 class="title is-size-5 has-text-centered">Commands</h1>
+
+                    <!-- Chat Commmands Level System Div -->
+                    <div class="is-hidden" id="chat-level-system-content">
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('rankcc')" class="has-text-white is-size-5">
+                                    <span class="tag has-text-white commands-span-color">!rank</span>
+                                </a>
+                                <span class="is-pulled-right tag is-success">Cooldown: 5 secs</span>
+                                <!-- Content -->
+                                <div class='is-hidden' id="rankcc">
+                                    <br>
+                                    <!-- <hr class="footer-dark-line"> -->
+                                    <p class="has-text-white">Returns an Image that Shows you the Current Rank, XP-Progress and your Position in the leaderboard you have in the server. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('leaderboardcc')" class="has-text-white is-size-5">
+                                    <span class="tag has-text-white commands-span-color">!leaderboard</span>
+                                </a>
+                                <span class="is-pulled-right tag is-success">Cooldown: 5 secs</span>
+                                <!-- Content -->
+                                <div class="is-hidden" id="leaderboardcc">
+                                    <br>
+                                    <p class="has-text-white">Shows the Leaderboard for the server.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Commands Games Div -->
+                    <div class="is-hidden" id="chat-games-content">
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('tictactoecc')" class="has-text-white is-size-5">
+                                    <span class="tag has-text-white commands-span-color">!tictactoe</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="tictactoecc">
+                                    <br>
+                                    <!-- <hr class="footer-dark-line"> -->
+                                    <p class="has-text-white">Classic Tic-Tac-Toe Game using Discord Buttons. (2 Player Game)</p>
+                                    <br>
+                                    <h3 class="has-text-white has-text-weight-bold">Usage:</h3>
+                                    <p class="has-text-white"><span class="tag has-text-white commands-span-color">!tictactoe @user</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('rpscc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!rps</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="rpscc">
+                                    <br>
+                                    <p class="has-text-white">Classic Rock-Paper-Scissors Game using Discord Buttons. (2 Player Game)</p>
+                                    <br>
+                                    <h3 class="has-text-white has-text-weight-bold">Usage:</h3>
+                                    <p class="has-text-white">!rps @&ltuser&gt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Commands Discord Together Div -->
+
+                    <div class="is-hidden" id="chat-discord-together-content">
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('yttcc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!youtube-together</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="yttcc">
+                                    <br>
+                                    <p class="has-text-white">Watch Youtube Together in-sync with everyone in your VC</p>
+                                    <br>
+                                    <h3 class="has-text-white has-text-weight-bold">Aliases:</h3>
+                                    <p class="has-text-white"><span class="tag has-text-white commands-span-color">!ytt</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('betraylcc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!betrayl</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="betraylcc">
+                                    <br>
+                                    <p class="has-text-white">Play Betrayl.io Game with others connected in your VC.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('chesscc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!chess</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="chesscc">
+                                    <br>
+                                    <p class="has-text-white">Play Chess with others connected in VC</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('fishingcc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!fishing</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="fishingcc">
+                                    <br>
+                                    <p class="has-text-white">Play Fishington with others connected in VC</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('pokercc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!poker</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="pokercc">
+                                    <br>
+                                    <p class="has-text-white">Play Poker Game with others connected in VC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Commands - Util/Misc Div  -->
+
+                    <div class="is-hidden" id="chat-miscellaneous-content">
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('calccc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!calculator</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="calccc">
+                                    <br class="is-dark">
+                                    <p class="has-text-white">Brings up a Interactive Calculator using Discord Buttons.</p>
+                                    <br>
+                                    <h3 class="has-text-white has-text-weight-bold">Aliases:</h3>
+                                    <p class="has-text-white"><span class="tag has-text-white commands-span-color">!calc</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('serverinfocc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!serverinfo</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="serverinfocc">
+                                    <br>
+                                    <p class="has-text-white">Gives some info about the Server.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('pingcc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!ping</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="pingcc">
+                                    <br>
+                                    <p class="has-text-white">Shows the Bots Ping with Discord API.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('suggestcc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!suggest</span>
+                                </a>
+                                <!-- Content -->
+                                <div class="is-hidden" id="suggestcc">
+                                    <br>
+                                    <p class="has-text-white">Post your Suggestion in a Embed with buttons for others to vote.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Commands - Moderation Div -->
+
+                    <div class="is-hidden" id="chat-moderation-content">
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('bancc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!ban</span>
+                                </a>
+                                <span class="is-pulled-right tag is-danger is-light">Ban Members</span>
+                                <!-- Content -->
+                                <div class="is-hidden" id="bancc">
+                                    <br>
+                                    <p class="has-text-white">Bans the user mentioned</p>
+                                    <br>
+                                    <h3 class="has-text-weight-bold has-text-white">Usage:</h3>
+                                    <p><span class="tag has-text-white commands-span-color">!ban @user</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box comamnds-box">
+                            <div>
+                                <!-- Title  -->
+                                <a href="javascript:showhideCommandsContent('kickcc')" class="has-text-white is-large">
+                                    <span class="tag has-text-white commands-span-color">!kick</span>
+                                </a>
+                                <span class="is-pulled-right tag is-danger is-light">Kick Members</span>
+                                <!-- Content -->
+                                <div class="is-hidden" id="kickcc">
+                                    <br>
+                                    <p class="has-text-white">Kicks the user mentioned</p>
+                                    <br>
+                                    <h3 class="has-text-weight-bold has-text-white">Usage:</h3>
+                                    <p><span class="tag has-text-white commands-span-color">!kick @user</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <hr class="footer-dark-line">
+        <p>
+            © 2022 <strong class="white-bold">Reubz Bot</strong> by
+            <a href="https://github.com/Reubzz">Reuben George</a>.
+        </p>
+    </div>
+  </footer>
+  <script src="/javascript/app.js"></script>
+</html>
