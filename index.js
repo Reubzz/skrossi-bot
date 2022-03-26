@@ -40,4 +40,4 @@ global.logFile = logFile
 // Initializing the project
 require("./handler")(client);
 
-// client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);
