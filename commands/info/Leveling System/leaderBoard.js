@@ -44,7 +44,7 @@ module.exports = {
                 }
             })
 
-            console.log(a)
+            
 
             const image = new canvas.Leaderboard()
                 .setData(a)
