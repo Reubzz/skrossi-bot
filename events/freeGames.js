@@ -25,6 +25,6 @@ client.on("messageCreate", async (message) => {
 		let newMessage = message.content.replace("@Free Games:", x.mentions);
 		freeGamesChannel.send({ content: newMessage})
 		let dateNow = new Date().getHours() + "." + new Date().getMinutes() + "." + new Date().getSeconds()
-		logFile(message, dateNow)
+		// logFile(message, dateNow)
 	})
 })
