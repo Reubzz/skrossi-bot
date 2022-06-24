@@ -80,7 +80,7 @@ module.exports = async (client) => {
                     ];
                 }, []);
 
-                guild.commands.permissions.set({ fullPermissions });
+                // guild.commands.permissions.set({ fullPermissions }); // commands Permissions deprecated for per guild
             }); 
 
             //.commands.set([]) // to delete all slash commands 
