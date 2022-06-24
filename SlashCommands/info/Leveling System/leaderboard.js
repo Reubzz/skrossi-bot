@@ -53,8 +53,15 @@ module.exports = {
                 .setDescription(`Full Leaderboard top 100 users - *Coming Soon*`)
                 .setColor('#2f3136')
                 .setImage("attachment://leaderboard-1.png")
-            
-            interaction.followUp({ embeds: [emb], files: [attachment] })
+                
+            const row = new MessageActionRow().addComponents(
+                new MessageButton()
+                    .setLabel('Top 100 LB here!')
+                    .setStyle('LINK')
+                    .setURL('https://bot.reubz.tk/leaderboards/skrossi')
+            )
+                
+            interaction.followUp({ embeds: [emb], files: [attachment], components: [row] })
          
             // let emb = new MessageEmbed()
             //     .setTitle('Leaderboard')
