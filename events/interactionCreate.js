@@ -72,10 +72,10 @@ client.on("interactionCreate", async (interaction) => {
 		]
 
 		selfRolesArr.forEach(async (x) =>{
-            if(x[0].toLowerCase() == interaction.customId.toLowerCase()) {
-                let role = interaction.guild.roles.cache.find((y) => y.name === x[1]) || interaction.guild.roles.cache.find((y) => y.id === x[1])
+            if(x[0].toLowerCase() != interaction.customId.toLowerCase()) return;
+            let role = interaction.guild.roles.cache.find((y) => y.name === x[1]) || interaction.guild.roles.cache.find((y) => y.id === x[1])
                 await interaction.deferReply({ ephemeral: true }).catch(() => {});
-	            switch (member.roles.cache.has(role.id)){
+                switch (member.roles.cache.has(role.id)){
                     case true: 
                         await member.roles.remove(role.id);
                         interaction.editReply({ content: `Your ${role} Role was removed.`, ephemeral: true });
@@ -85,7 +85,6 @@ client.on("interactionCreate", async (interaction) => {
                         interaction.editReply({ content: `You were given the ${role} Role.`, ephemeral: true });
                         break;
                 }
-            }
         })      
 
         // Color Roles Command 
@@ -101,13 +100,13 @@ client.on("interactionCreate", async (interaction) => {
 		]
 
 		colorRole.forEach(async (x) =>{
+            if(x[0].toLowerCase() != interaction.customId.toLowerCase()) return;
             let role = interaction.guild.roles.cache.find((y) => y.name === x[1]) || interaction.guild.roles.cache.find((y) => y.id === x[1])
 		    if(member.roles.cache.has(role.id)) member.roles.remove(role.id);
-            if(x[0].toLowerCase() == interaction.customId.toLowerCase()) {
-                await member.roles.add(role.id);
-                await interaction.deferReply({ ephemeral: true }).catch(() => {});
-		        interaction.editReply({ content: `You were given the ${role} Role.`, ephemeral: true });
-            }
+            
+            await member.roles.add(role.id);
+            await interaction.deferReply({ ephemeral: true }).catch(() => {});
+            interaction.editReply({ content: `You were given the ${role} Role.`, ephemeral: true });
         })
     }
 });
