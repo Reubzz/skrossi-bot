@@ -17,7 +17,6 @@
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-static": "^1.2.6",
     "fortnite": "^4.3.2",
     "fortnite-9812": "^1.0.4",
     "fs": "0.0.1-security",
@@ -32,7 +31,8 @@
     "node-fetch": "^2.6.1",
     "quickmongo": "^3.0.0",
     "simply-djs": "^2.5.1",
-    "simply-xp": "^1.1.5-beta"
+    "simply-xp": "^1.1.5-beta",
+    "youtube-notification-module": "^1.1.0"
   },
   "devDependencies": {
     "node": "^16.6.1"
