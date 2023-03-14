@@ -8,16 +8,17 @@ const port = process.env.PORT; // To work with Railway
 app.get('/', (req, res) => res.send("Working ........"));
 
 app.get('/leaderboard/:gid', (req, res) => {
-    let guild = client.guilds.cache.get(`${req.params.gid}`);
+    let GUILD_ID = req.params.gid;
+    let guild = client.guilds.cache.get(`${GUILD_ID}`);
     try {
-        xp.leaderboard(client, guild.id, 101).then((b) => {
-            b.forEach((e) => {
-                e.pfp = guild.members.cache.get(e.userID).displayAvatarURL({ format: "png" })
+        xp.leaderboard(client, guild.id, 101).then((users) => {
+            users.forEach((user) => {
+                user.pfp = guild.members.cache.get(user.userID).displayAvatarURL({ format: "png" })
             });
-            res.send(b)
+            res.send(users)
         })
     } catch (e) {
-        if(e === TypeError){
+        if (e === TypeError) {
             res.send(e)
         }
     }
@@ -47,8 +48,8 @@ global.xp = xp
 let fs = require('fs');
 let util = require('util');
 
-logFile = function(d, fileName) { //
-    let log_file = fs.createWriteStream(__dirname + "/logs/" + fileName + ".log", {flags : 'w'});
+logFile = function (d, fileName) { //
+    let log_file = fs.createWriteStream(__dirname + "/logs/" + fileName + ".log", { flags: 'w' });
     let log_stdout = process.stdout;
 
     log_file.write(util.format(d) + '\n');
