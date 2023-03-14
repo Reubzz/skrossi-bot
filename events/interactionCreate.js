@@ -1,18 +1,15 @@
 const { CommandInteractionOptionResolver } = require("discord.js");
 const client = require("../index");
 const config = require("../config.json")
-let { Database } = require('quickmongo');
-let db = new Database(config.mongooseConnectionString);
-const simplydjs = require("simply-djs");
 
 client.on("interactionCreate", async (interaction) => {
 
     // Slash Command Handling
     
     if (interaction.isCommand()) {
-        await interaction.deferReply({ ephemeral: false }).catch(() => {});
-
         const cmd = client.slashCommands.get(interaction.commandName);
+        if(!cmd.noDefer)
+            await interaction.deferReply({ ephemeral: false }).catch(() => {});
         if (!cmd)
             return interaction.followUp({ content: "An error has occured " });
 
@@ -39,9 +36,7 @@ client.on("interactionCreate", async (interaction) => {
         if (command) command.run(client, interaction);
     }
 
-    // Suggestion System
-
-    simplydjs.suggestBtn(interaction, db)
+    
 
     // --- Buttons Command Handler -- 
 
@@ -54,7 +49,11 @@ client.on("interactionCreate", async (interaction) => {
 			await interaction.deferReply({ ephemeral: true }).catch(() => {});
             const verifiedRole = '749958590323752981'
             member.roles.add(verifiedRole)
-            interaction.editReply({ content: 'You are now Verified', ephemeral: true });
+            try {
+                interaction.editReply({ content: 'You are now Verified', ephemeral: true });
+            } catch (e) {
+                console.log(e)
+            }
         }
 
 
