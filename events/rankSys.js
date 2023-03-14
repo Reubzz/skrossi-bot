@@ -19,9 +19,9 @@ client.on("messageCreate", async(message) => {
     xp.addXP(message, message.author.id, message.guild.id, {
         min: 15,
         max: 50
-    })
+    }).catch(() => {})
     
     obj[message.author.id] = Date.now() + cooldown; // Adding Cooldown to Users.
 
-    xp.lvlRole(message, message.author.id, message.guild.id) // Level Roles Core.
+    xp.lvlRole(message, message.author.id, message.guild.id).catch(() => {}) // Level Roles Core.
 })
