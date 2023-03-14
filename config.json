@@ -1,5 +1,4 @@
 {
-  "token": "your bot's token",
   "prefix": "!",
   "mongooseConnectionString": "mongodb+srv://replit:replit@message-scheduler-bot.6ydxk.mongodb.net/mainDB",
   "mongooseSuggestionsConnectionString": "mongodb+srv://replit:replit@message-scheduler-bot.6ydxk.mongodb.net/suggestionDB",
