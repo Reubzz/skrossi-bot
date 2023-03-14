@@ -5,6 +5,10 @@ const commandChoices = [
     {
         name: 'Set Custom Rank Card',
         value: 'customRankCard',
+    },
+    {
+        name: 'Suggestions Manager',
+        value: 'suggestionSys',
     }
 ]
 
