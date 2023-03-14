@@ -1,6 +1,6 @@
 const { Client, Message, MessageActionRow, MessageButton, MessageEmbed, MessageAttachment, MessageSelectMenu } = require('discord.js');
 const simplydjs = require("simply-djs")
-const config = require('../../../config.json')
+const { webURL, levelsChannel } = require('../../../config.json')
 const canvas = require('discord-canvas')
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
      */
 
     run: async (client, message, args) => {
-      if(message.channel.id !== config.levelsChannel) return;
+      if(message.channel.id !== levelsChannel) return;
         await xp.leaderboard(client, message.guild.id, 45).then(async board => {
             let a = []
             let b = []
@@ -64,7 +64,7 @@ module.exports = {
                 new MessageButton()
                     .setLabel('Top 100 LB here!')
                     .setStyle('LINK')
-                    .setURL('https://bot.reubz.tk/leaderboards/skrossi')
+                    .setURL(`${webURL}/leaderboards/skrossi`)
             )
             
             message.reply({ embeds: [emb], files: [attachment], allowedMentions: { repliedUser: false }, components: [row] })
