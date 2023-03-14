@@ -3,10 +3,25 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const port = 80;
+const port = process.env.PORT; // To work with Railway
 
-app.get('/', (req, res) => res.sendFile(__dirname+'/website/index.html'));
-app.use('/commands', express.static('./website/commands'));
+app.get('/', (req, res) => res.send("Working ........"));
+
+app.get('/leaderboard/:gid', (req, res) => {
+    let guild = client.guilds.cache.get(`${req.params.gid}`);
+    try {
+        xp.leaderboard(client, guild.id, 101).then((b) => {
+            b.forEach((e) => {
+                e.pfp = guild.members.cache.get(e.userID).displayAvatarURL({ format: "png" })
+            });
+            res.send(b)
+        })
+    } catch (e) {
+        if(e === TypeError){
+            res.send(e)
+        }
+    }
+})
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
@@ -17,6 +32,10 @@ module.exports = client;
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./config.json");
+
+// Discord Modals
+const discordModals = require('discord-modals') // Define the discord-modals package!
+discordModals(client);
 
 // Global Variables - Leveling system
 
