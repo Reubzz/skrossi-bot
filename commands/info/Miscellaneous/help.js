@@ -18,7 +18,7 @@ module.exports = {
             new MessageButton()
                 .setLabel('Bot Commands')
                 .setStyle('LINK')
-                .setURL(`https://${webURL}/commands`)
+                .setURL(`${webURL}/commands`)
         )
 
         const emb = new MessageEmbed()
