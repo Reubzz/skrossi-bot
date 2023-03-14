@@ -1,9 +1,14 @@
 {
-    "token": "your bot's token",
-    "prefix": "!",
-    "mongooseConnectionString": "mongodb+srv://replit:replit@message-scheduler-bot.6ydxk.mongodb.net/mainDB",
-    "mongooseSuggestionsConnectionString": "mongodb+srv://replit:replit@message-scheduler-bot.6ydxk.mongodb.net/suggestionDB",
-    "owner": ["331382684188409857"],
+  "token": "your bot's token",
+  "prefix": "!",
+  "mongooseConnectionString": "mongodb+srv://replit:replit@message-scheduler-bot.6ydxk.mongodb.net/mainDB",
+  "mongooseSuggestionsConnectionString": "mongodb+srv://replit:replit@message-scheduler-bot.6ydxk.mongodb.net/suggestionDB",
+  "owner": ["331382684188409857"],
 
-		"levelsChannel": "750605201278369873"
+  "levelsChannel": "750605201278369873",
+  "suggestionChannel": "750592603229126676",
+  "starboardChannel": "750592603229126676",
+
+  "webURL": "https://bot.reubz.io",
+  "supportServer": "https://discord.gg/nmKqbgtEWb"
 }
