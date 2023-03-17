@@ -20,11 +20,11 @@ app.get('/leaderboard/:gid', (req, res) => {
                 user.serverName = guild.name;
                 user.serverIcon = guild.iconURL({ format: "png" }) + "?size=4096";
                 user.serverLevels = [
-                    { lvl: '5', role: guild.roles.cache.get('749959207507329086').name.replace(/ /gi, '') },
-                    { lvl: '10', role: guild.roles.cache.get('749959601168056429').name.replace(/ /gi, '') },
-                    { lvl: '20', role: guild.roles.cache.get('749959920660512768').name.replace(/ /gi, '') },
-                    { lvl: '50', role: guild.roles.cache.get('749960092102951035').name.replace(/ /gi, '') },
-                    { lvl: '100', role: guild.roles.cache.get('749960196381474976').name.replace(/ /gi, '') }
+                    { lvl: '5', role: guild.roles.cache.get('749959207507329086').name.replace(/ /gi, ''), color: guild.roles.cache.get('749959207507329086').color },
+                    { lvl: '10', role: guild.roles.cache.get('749959601168056429').name.replace(/ /gi, ''), color: guild.roles.cache.get('749959601168056429').color },
+                    { lvl: '20', role: guild.roles.cache.get('749959920660512768').name.replace(/ /gi, ''), color: guild.roles.cache.get('749959920660512768').color },
+                    { lvl: '50', role: guild.roles.cache.get('749960092102951035').name.replace(/ /gi, ''), color: guild.roles.cache.get('749960092102951035').color },
+                    { lvl: '100', role: guild.roles.cache.get('749960196381474976').name.replace(/ /gi, ''), color: guild.roles.cache.get('749960196381474976').color }
                 ]
             });
             res.send(users)
