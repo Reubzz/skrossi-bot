@@ -33,7 +33,7 @@
     "node-fetch": "^2.6.1",
     "quickmongo": "^3.0.0",
     "simply-djs": "^2.5.1",
-    "simply-xp": "^1.1.5-beta",
+    "simply-xp": "1.1.5-beta",
     "youtube-notification-module": "^1.1.0"
   },
   "devDependencies": {
