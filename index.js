@@ -1,5 +1,6 @@
 const { Client, Collection } = require("discord.js");
 require('dotenv').config();
+db = require('simply-xp/src/models/lvlrole');
 
 const express = require('express');
 const app = express();
@@ -15,19 +16,26 @@ app.get('/leaderboard/:gid', (req, res) => {
     }
     try {
         xp.leaderboard(client, guild.id, 101).then(async (users) => {
-            await users.forEach((user) => {
+
+            // Building full server level roles data object 
+            let serverLevels = [];
+            (await db.find().sort({ lvl: 1 }))[0].lvlrole.forEach((level) => {
+                serverLevels.push({
+                    lvl: level.lvl, // level number
+                    role: guild.roles.cache.get(level.role).name.replace(/ /gi, ''), // Role name
+                    color: guild.roles.cache.get(level.role).hexColor,  // role color
+                })
+            });
+
+            // Building user object to be sent by API
+            await users.forEach(async (user) => {
                 user.pfp = guild.members.cache.get(user.userID).displayAvatarURL({ format: "png" })
                 user.serverName = guild.name;
                 user.serverIcon = guild.iconURL({ format: "png" }) + "?size=4096";
-                user.serverLevels = [
-                    { lvl: '5', role: guild.roles.cache.get('749959207507329086').name.replace(/ /gi, ''), color: guild.roles.cache.get('749959207507329086').hexColor },
-                    { lvl: '10', role: guild.roles.cache.get('749959601168056429').name.replace(/ /gi, ''), color: guild.roles.cache.get('749959601168056429').hexColor },
-                    { lvl: '20', role: guild.roles.cache.get('749959920660512768').name.replace(/ /gi, ''), color: guild.roles.cache.get('749959920660512768').hexColor },
-                    { lvl: '50', role: guild.roles.cache.get('749960092102951035').name.replace(/ /gi, ''), color: guild.roles.cache.get('749960092102951035').hexColor },
-                    { lvl: '100', role: guild.roles.cache.get('749960196381474976').name.replace(/ /gi, ''), color: guild.roles.cache.get('749960196381474976').hexColor }
-                ]
+                user.serverLevels = serverLevels;
             });
             res.send(users)
+
         })
     } catch (e) {
         if (e === TypeError) {
