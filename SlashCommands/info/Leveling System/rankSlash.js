@@ -25,7 +25,7 @@ module.exports = {
         await rankk.rankcard(interaction, targetMember.id, interaction.guild.id).then((img) => {
             interaction.followUp({ files: [img] });
         }).catch((err) => {
-            if(err = TypeError){
+            if (err = TypeError) {
                 return interaction.followUp({ content: `You are not ranked.` })
             }
             interaction.followUp(err.toString());
