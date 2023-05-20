@@ -16,7 +16,7 @@ module.exports = {
             new MessageButton()
                 .setLabel('Bot Commands')
                 .setStyle('LINK')
-                .setURL('https://bot.reubz.tk/commands')
+                .setURL(`${webURL}/commands`)
         )
 
         const emb = new MessageEmbed()
@@ -29,7 +29,7 @@ module.exports = {
             `)
             .setFooter("For queries/issues regarding this bot contact @Reubz")
             .setColor("#2f3136")
-        
+
         interaction.followUp({ embeds: [emb], components: [row] })
     }
 };
