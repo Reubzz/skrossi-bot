@@ -30,7 +30,7 @@ module.exports = {
     interaction.followUp({
       embeds: [
         new MessageEmbed()
-          .setThumbnail(interaction.guild.iconURL())
+          .setThumbnail(interaction.guild.iconURL({ format: 'gif' }))
           .addFields(
             {
               name: `${emojis.bitsRed} **__INFORMATION__**`,
