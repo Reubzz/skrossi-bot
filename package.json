@@ -1,6 +1,6 @@
 {
   "name": "skrossi-official",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -34,10 +34,12 @@
     "quickmongo": "^3.0.0",
     "simply-djs": "^2.5.1",
     "simply-xp": "1.1.5-beta",
+    "vandal.js": "^1.2.0",
     "youtube-notification-module": "^1.1.0"
   },
   "devDependencies": {
-    "node": "^16.6.1"
+    "node": "^16.6.1",
+    "nodemon": "^3.0.1"
   },
   "scripts": {
     "start": "node .",

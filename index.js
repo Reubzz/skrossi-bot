@@ -3,51 +3,41 @@ require('dotenv').config();
 db = require('simply-xp/src/models/lvlrole');
 
 const express = require('express');
-const app = express();
+const path = require("path");
+
 const port = process.env.PORT; // To work with Railway
+const app = express();
+app.use(express.static("public"));
+app.use(express.json());
 
-app.get('/', (req, res) => res.status(200).send("Working OK"));
 
-app.get('/leaderboard/:gid', (req, res) => {
-    let GUILD_ID = req.params.gid;
-    let guild = client.guilds.cache.get(`${GUILD_ID}`);
-    if (!guild) {
-        res.status(404).send("Incorrect Guild Id Supplied");
-    }
-    try {
-        xp.leaderboard(client, guild.id, 101).then(async (users) => {
+app.use('/', require(path.join(__dirname, "/api/main.js")));
+app.use('/leaderboard', require(path.join(__dirname, "/api/leaderboard.js")));
+app.use('/valorant/rank', require(path.join(__dirname, "/api/valorant/rank.js")));
+app.use('/valorant/agent', require(path.join(__dirname, "/api/valorant/agent.js")));
+app.use('/valorant/playtime', require(path.join(__dirname, "/api/valorant/playtime.js")));
 
-            // Building full server level roles data object 
-            let serverLevels = [];
-            (await db.find().sort({ lvl: 1 }))[0].lvlrole.forEach((level) => {
-                serverLevels.push({
-                    lvl: level.lvl, // level number
-                    role: guild.roles.cache.get(level.role).name.replace(/ /gi, ''), // Role name
-                    color: guild.roles.cache.get(level.role).hexColor,  // role color
-                })
-            });
 
-            // Building user object to be sent by API
-            await users.forEach(async (user) => {
-                user.pfp = guild.members.cache.get(user.userID).displayAvatarURL({ format: "png" })
-                user.serverName = guild.name;
-                user.serverIcon = guild.iconURL({ format: "png" }) + "?size=4096";
-                user.serverLevels = serverLevels;
-            });
-            res.send(users)
-
-        })
-    } catch (e) {
-        if (e === TypeError) {
-            res.status(404).send(e)
-        }
-    }
-})
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 const client = new Client({ intents: 32767, });
 module.exports = client;
+
+global.clientt = client 
+/**
+ * for the above line 24 code - made "clientt" a global variable so it can be accessed from anywhere 
+ * like in the leaderboard api route (/api/leaderboard.js)
+ * where there is no way to import the discord bot client - which is basically an instance of the bot.
+ * this will allow the client to be accessed globally without any interference with existing codebase as the name is 'clientt' 
+ * with a double "T" 
+ * single "T" is used in all other places related to the discord bot, its commands and its functionality. 
+ * 
+ * hence forth 'clientt' (the one with double T) is meant to be used in all places not related to the discord bot - like the api. to avoid confusion.  
+ * 
+ * 
+ *  ! A better method for the same can be found out later as of 18/11/2023 this seems like the most easiest and fastest fix right now. 
+ */
 
 // Global Variables
 client.commands = new Collection();
