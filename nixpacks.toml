@@ -1,2 +1,5 @@
 [phases.setup]
     nixLibs = ['zlib']
+
+[build]
+    nixpacksVersion = "1.15.0"
