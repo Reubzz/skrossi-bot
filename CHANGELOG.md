@@ -1,4 +1,4 @@
-### Update - 19/11/2023 - v2.0.0
+### Update v2.0.0 - 19/11/2023
 - Cleaned up code in Index.js & segregated the Bot API files into a separate API Folder - (/api)
 
 - Added a new Valorant API 
@@ -21,3 +21,7 @@
         |   
         |- index.js
     ```
+
+
+### Update v2.0.1 - 19/11/2023
+- Removed canvas package
