@@ -25,3 +25,4 @@
 
 ### Update v2.0.1 - 19/11/2023
 - Removed canvas package
+- Added nixpacks.toml file
