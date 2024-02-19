@@ -70,8 +70,8 @@ module.exports = {
         }
       ],
       "author": {
-        "name": "SkRossi's Official Discord Server",
-        "url": "https://www.youtube.com/SkRossi",
+        "name": "Official Kreo Athlete",
+        // "url": "https://www.youtube.com/SkRossi",
         "icon_url": "https://i.imgur.com/iQnqPkM.png"
       },
       "footer": {
