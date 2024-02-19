@@ -70,7 +70,7 @@ module.exports = {
         }
       ],
       "author": {
-        "name": "Official Kreo Athlete",
+        "name": "SkRossi - Official Kreo Athlete",
         // "url": "https://www.youtube.com/SkRossi",
         "icon_url": "https://i.imgur.com/iQnqPkM.png"
       },
@@ -78,9 +78,9 @@ module.exports = {
         "text": "\"About SkRossi\" | By - Reubz",
         "icon_url": "https://i.imgur.com/iQnqPkM.png"
       },
-      "timestamp": "2021-10-12T05:30:00.000Z",
+      "timestamp": "2024-02-19T16:20:40Z",
       "image": {
-        "url": "https://i.imgur.com/iQnqPkM.png"
+        "url": "https://i.imgur.com/MlJRSZd.png?1"
       }
     }
 
