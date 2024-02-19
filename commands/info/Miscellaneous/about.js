@@ -41,7 +41,7 @@ module.exports = {
         },
         {
           "name": "Current Team:",
-          "value": "<:GE:860849843412664320> Global Esports",
+          "value": "<:Revenant:1209167785197047879> Revenant Esports",
           "inline": true
         },
         {
@@ -72,15 +72,15 @@ module.exports = {
       "author": {
         "name": "SkRossi's Official Discord Server",
         "url": "https://www.youtube.com/SkRossi",
-        "icon_url": "https://i.imgur.com/XeC2hiY.png"
+        "icon_url": "https://i.imgur.com/iQnqPkM.png"
       },
       "footer": {
         "text": "\"About SkRossi\" | By - Reubz",
-        "icon_url": "https://i.imgur.com/XeC2hiY.png"
+        "icon_url": "https://i.imgur.com/iQnqPkM.png"
       },
       "timestamp": "2021-10-12T05:30:00.000Z",
       "image": {
-        "url": "https://i.imgur.com/omtkB6v.png"
+        "url": "https://i.imgur.com/iQnqPkM.png"
       }
     }
 

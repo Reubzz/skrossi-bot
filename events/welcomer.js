@@ -10,7 +10,7 @@ client.on("guildMemberAdd", async(member) => {
 		if(!welcomeChannel) return;
 
 		const image = new canvas.Welcome()
-        	.setBackground("https://i.imgur.com/uKG4B2B.png")
+        	.setBackground("https://i.imgur.com/Xb01WfK.jpg")
         	.setUsername(member.user.username)
         	.setDiscriminator(member.user.discriminator)
         	.setAvatar(member.user.displayAvatarURL({ format: 'png' }))
@@ -35,9 +35,9 @@ client.on("guildMemberAdd", async(member) => {
 							`      ${emojis.bitsBlue} Welcome to ${member.guild.name}'s Discord Server ${emojis.bitsBlue}\n` +
 							`☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆\n\n` +
 							`Hey <@${member.user.id}>, \n` +
-							`Be sure to check out ${channels.rules} and follow them!\n` +
+							`Be sure to check out ${channels.rules} and follow them!\n\n` +
 							`> ${emojis.rightArrow} <#${channels.about}> to know about SkRossi.\n` +
-							`> ${emojis.rightArrow} <#${channels.verify}> Gain access to the server here!!\n\n` +
+							// `> ${emojis.rightArrow} <#${channels.verify}> Gain access to the server here!!\n\n` +
 							`Use <#${channels.help}> to address any problems you have about the server!!`
 
 		welcomeChannel.send({ content: welcomeTxt, files: [attachment]})}
