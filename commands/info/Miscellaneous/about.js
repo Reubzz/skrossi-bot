@@ -23,7 +23,7 @@ module.exports = {
         },
         {
           "name": "Birthday & Age:",
-          "value": "October 12, 1997\n(24 Years Old)"
+          "value": "October 12, 1997\n(26 Years Old)"
         },
         {
           "name": "Nationality:",
